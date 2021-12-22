@@ -43,8 +43,15 @@ operators.forEach(operator =>
         index = current.textContent.indexOf(currentOperator)
         firstNumber = current.textContent.slice(0, index)
         secondNumber = current.textContent.slice(index + 1)
+    
         if (current.textContent === '') {
-            if (operator.textContent !== '-') return
+            if (operator.textContent !== '-') {
+                return
+            }
+            else {
+                currentOperator = operator.textContent
+                addOperator(currentOperator)
+            }
         }
         else if (index == current.textContent.length - 1 ) {
             return
